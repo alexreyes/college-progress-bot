@@ -9,17 +9,18 @@ It tweets
 
 it yeets 
 
-but it dont sleep
+but it dont sleep 
 ```
-<br>
-<br>
+
 (also includes a special message upon reaching 100%)
 
 ## Installation
 
 ```
 git clone https://github.com/alexreyes/college-progress-bot/
+
 cd college-progress-bot
+
 python3 twitterBot.py
 ```
 
