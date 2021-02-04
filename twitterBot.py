@@ -61,21 +61,27 @@ def calculateProgress():
 def main():
     progressPercent = calculateProgress()
     summaryTweet = summary()
+    progress = progressBar(progressPercent, 100)
 
-    if (progressPercent == 100):
+    roundedProgress = (round(progressPercent, 1))
+
+    if (roundedProgress == 100):
         print("Sending final 100% tweet!")
         send_tweet("@alexreyes243 is officially a Penn State graduate 🎓 🎉 🥳")
         send_tweet(summaryTweet)
 
-    elif (progressPercent > 100):
+    elif (roundedProgress > 100):
         print("Already done with this bot account!")
         exit()
 
-    else:
+    elif(roundedProgress.is_integer()):
         print("Sending progress tweet")
-        progress = progressBar(progressPercent, 100)
 
+        print(progress)
         send_tweet(progress)
+
+    else:
+        print("No tweet today. Progress: %f" % (roundedProgress))
 
 
 main()
