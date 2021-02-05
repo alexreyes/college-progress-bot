@@ -8,8 +8,7 @@ TWITTER_API_KEY = os.getenv('TWITTER_API_KEY')
 TWITTER_API_SECRET = os.getenv('TWITTER_API_SECRET')
 TWITTER_ACCESS_TOKEN = os.getenv('TWITTER_ACCESS_TOKEN')
 TWITTER_ACCESS_TOKEN_SECRET = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
-
-
+    
 def send_tweet(tweet):
     auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
     auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
@@ -29,8 +28,8 @@ def progressBar(count, total):
 
 
 def summary():
-    firstDay = date(2017, 9, 5)
-    lastDay = date(2021, 4, 29)
+    firstDay = date(2017, 8, 21)
+    lastDay = date(2021, 5, 7)
     birth = date(1999, 9, 28)
     today = date.today()
 
@@ -46,9 +45,9 @@ def summary():
 
 
 def calculateProgress():
-    firstDay = date(2017, 9, 5)
-    lastDay = date(2021, 4, 29)
-    today = date.today()
+    firstDay = date(2017, 8, 21)
+    lastDay = date(2021, 5, 7)
+    today = date.today()  
 
     totalDaysOfUndergrad = lastDay - firstDay
     daysSinceStart = today - firstDay
@@ -74,14 +73,10 @@ def main():
         print("Already done with this bot account!")
         exit()
 
-    elif(roundedProgress.is_integer()):
+    else:
         print("Sending progress tweet")
 
         print(progress)
         send_tweet(progress)
-
-    else:
-        print("No tweet today. Progress: %f" % (roundedProgress))
-
 
 main()
