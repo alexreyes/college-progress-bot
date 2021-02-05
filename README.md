@@ -21,6 +21,8 @@ git clone https://github.com/alexreyes/college-progress-bot/
 
 cd college-progress-bot
 
+pip install -r requirements.txt
+
 python3 twitterBot.py
 ```
 
